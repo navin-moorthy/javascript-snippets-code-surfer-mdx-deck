@@ -1,0 +1,1075 @@
+import { CodeSurferLayout } from "code-surfer";
+export { dracula as theme } from "code-surfer";
+
+# Hello All👋
+
+## Excited🚀 to learn about
+
+### 25 JavaScript Shorthand Coding Techniques😎
+
+Press ➡ to proceed
+
+---
+
+# Thanks🙏
+
+### [SitePoint Blog Post](https://www.sitepoint.com/shorthand-javascript-techniques/)
+
+### by
+
+### [Michael Wanyoike](https://www.sitepoint.com/author/mwanyoike/) & [Sam Deering](https://www.sitepoint.com/author/sdeering/)
+
+---
+
+<CodeSurferLayout>
+
+```js title="1. The Ternary Operator" subtitle="Longhand"
+const x = 20;
+let answer;
+
+if (x > 10) {
+  answer = "greater than 10";
+} else {
+  answer = "less than 10";
+}
+
+console.log(answer);
+// greater than 10
+```
+
+```js 4[1,2],6[3:6] title="1. The Ternary Operator" subtitle="Notice the if else statement"
+const x = 20;
+let answer;
+
+if (x > 10) {
+  answer = "greater than 10";
+} else {
+  answer = "less than 10";
+}
+```
+
+```js title="1. The Ternary Operator" subtitle="Shorthand"
+const x = 20;
+
+const answer = x > 10 ? "greater than 10" : "less than 10";
+
+console.log(answer);
+// greater than 10
+```
+
+```js 1[23,43] title="1. The Ternary Operator" subtitle="Notice the ternary operators ? :"
+const answer = x > 10 ? "greater than 10" : "less than 10";
+```
+
+```js title="1. The Ternary Operator" subtitle="You can also nest your if statement like this"
+const x = 7;
+
+const answer =
+  x > 10
+    ? "greater than 10"
+    : x < 5
+    ? "less than 5"
+    : "between 5 and 10";
+
+console.log(answer);
+// between 5 and 10
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="2. Short-circuit Evaluation" subtitle="Longhand"
+if (
+  variable1 !== null ||
+  variable1 !== undefined ||
+  variable1 !== ""
+) {
+  let variable2 = variable1;
+}
+```
+
+```js 2,3,4 title="2. Short-circuit Evaluation" subtitle="Longhand: Focused"
+if (
+  variable1 !== null ||
+  variable1 !== undefined ||
+  variable1 !== ""
+) {
+  let variable2 = variable1;
+}
+```
+
+```js title="2. Short-circuit Evaluation" subtitle="Shorthand"
+const variable2 = variable1 || "new";
+```
+
+```js title="2. Short-circuit Evaluation" subtitle="Example"
+let variable1;
+let variable2 = variable1 || "bar";
+
+console.log(variable2 === "bar");
+// prints true
+
+variable1 = "foo";
+variable2 = variable1 || "bar";
+
+console.log(variable2);
+// prints foo
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="3. Declaring Variables" subtitle="Longhand"
+let x;
+let y;
+let z = 3;
+```
+
+```js title="3. Declaring Variables" subtitle="Shorthand"
+let x,
+  y,
+  z = 3;
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="4. If Presence" subtitle="Longhand"
+if (likeJavaScript === true)
+```
+
+```js title="4. If Presence" subtitle="Shorthand"
+if (likeJavaScript)
+```
+
+```js 3 title="4. If Presence" subtitle="Example: Longhand"
+let a;
+
+if (a !== true) {
+  // do something...
+}
+```
+
+```js 3 title="4. If Presence" subtitle="Example: Shorthand"
+let a;
+
+if (!a) {
+  // do something...
+}
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="5. JavaScript For Loop" subtitle="Longhand"
+const fruits = ["mango", "peach", "banana"];
+
+for (let i = 0; i < fruits.length; i++) {
+  // do something...
+}
+```
+
+```js 3  title="5. JavaScript For Loop" subtitle="Longhand"
+const fruits = ["mango", "peach", "banana"];
+
+for (let i = 0; i < fruits.length; i++) {
+  // do something...
+}
+```
+
+```js title="5. JavaScript For Loop" subtitle="Shorthand: for of"
+const fruits = ["mango", "peach", "banana"];
+
+for (let fruit of fruits) {
+  // do something...
+}
+```
+
+```js title="5. JavaScript For Loop" subtitle="Shorthand: forEach()"
+const logArrayElements = (element, index, array) => {
+  console.log("a[" + index + "] = " + element);
+};
+
+[2, 5, 9].forEach(logArrayElements);
+```
+
+```js 5 title="5. JavaScript For Loop" subtitle="Shorthand: forEach()"
+const logArrayElements = (element, index, array) => {
+  console.log("a[" + index + "] = " + element);
+};
+
+[2, 5, 9].forEach(logArrayElements);
+```
+
+```js 3 title="5. JavaScript For Loop" subtitle="Example: For accessing 'index' in an array"
+const fruits = ["mango", "peach", "banana"];
+
+for (let index in fruits) {
+  // do something...
+}
+```
+
+```js 7 title="5. JavaScript For Loop" subtitle="Example: For accessing 'keys' in an object"
+const obj = {
+  continent: "Africa",
+  country: "Kenya",
+  city: "Nairobi",
+};
+
+for (let keys in obj) console.log(keys);
+// output: continent, country, city
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="6. Decimal Base Exponents" subtitle="Longhand"
+for (let i = 0; i < 10000; i++) {}
+```
+
+```js title="6. Decimal Base Exponents" subtitle="Shorthand"
+for (let i = 0; i < 1e7; i++) {}
+
+// All the below will evaluate to true
+1 === 1;
+1e1 === 10;
+1e2 === 100;
+1e3 === 1000;
+1e4 === 10000;
+1e5 === 100000;
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="7. Object Property" subtitle="Longhand"
+const x = 1920,
+  y = 1080;
+
+const obj = { x: x, y: y };
+```
+
+```js title="7. Object Property" subtitle="Shorthand"
+const x = 1920,
+  y = 1080;
+
+const obj = { x, y };
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="8. Arrow Functions" subtitle="Longhand: function()"
+function sayHello(name) {
+  console.log("Hello", name);
+}
+
+setTimeout(function() {
+  console.log("Loaded");
+}, 2000);
+
+list.forEach(function(item) {
+  console.log(item);
+});
+```
+
+```js title="8. Arrow Functions" subtitle="Shorthand"
+sayHello = name => console.log("Hello", name);
+
+setTimeout(() => console.log("Loaded"), 2000);
+
+list.forEach(item => console.log(item));
+```
+
+```js 1[17,18],3[15,16],5[19,20] title="8. Arrow Functions" subtitle="Shorthand: =>"
+sayHello = name => console.log("Hello", name);
+
+setTimeout(() => console.log("Loaded"), 2000);
+
+list.forEach(item => console.log(item));
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="9. Implicit Return" subtitle="Longhand"
+function calcCircumference(diameter) {
+  return Math.PI * diameter;
+}
+```
+
+```js title="9. Implicit Return" subtitle="Shorthand"
+calcCircumference = diameter => (
+  Math.PI * diameter;
+)
+```
+
+```js title="9. Implicit Return" subtitle="Shorthand"
+calcCircumference = diameter => Math.PI * diameter;
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="10. Default Parameter Values" subtitle="Longhand"
+function volume(l, w, h) {
+  if (w === undefined) w = 3;
+  if (h === undefined) h = 4;
+  return l * w * h;
+}
+
+volume(2);
+```
+
+```js title="10. Default Parameter Values" subtitle="Shorthand"
+volume = (l, w = 3, h = 4) => l * w * h;
+
+volume(2);
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="11. Template Literals" subtitle="Longhand"
+const welcome =
+  "You have logged in as " + first + " " + last + ".";
+```
+
+```js title="11. Template Literals" subtitle="Shorthand: ignore the underscore"
+const welcome = `You have logged in as $_{first} $_{last}`;
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="12. Destructuring Assignment" subtitle="Longhand"
+const observable = require("mobx/observable");
+const action = require("mobx/action");
+const runInAction = require("mobx/runInAction");
+
+const store = this.props.store;
+const form = this.props.form;
+const loading = this.props.loading;
+const errors = this.props.errors;
+const entity = this.props.entity;
+```
+
+```js title="12. Destructuring Assignment" subtitle="Shorthand"
+import { observable, action, runInAction } from "mobx";
+
+const { store, form, loading, errors, entity } = this.props;
+```
+
+```js title="12. Destructuring Assignment" subtitle="Shorthand with custom name for the varialbles"
+const {
+  store,
+  form,
+  loading,
+  errors: err,
+  entity: contact,
+} = this.props;
+```
+
+```js 5,6 title="12. Destructuring Assignment" subtitle="Shorthand with custom name for the varialbles"
+const {
+  store,
+  form,
+  loading,
+  errors: err,
+  entity: contact,
+} = this.props;
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="13. Multi-line String" subtitle="Longhand"
+const lorem =
+  "Lorem ipsum dolor sit amet, consectetur\n\t" +
+  "adipisicing elit, sed do eiusmod tempor incididunt\n\t" +
+  "ut labore et dolore magna aliqua. Ut enim ad minim\n\t" +
+  "veniam, quis nostrud exercitation ullamco laboris\n\t" +
+  "nisi ut aliquip ex ea commodo consequat. Duis aute\n\t" +
+  "irure dolor in reprehenderit in voluptate velit esse.\n\t";
+```
+
+```js title="13. Multi-line String" subtitle="Shorthand"
+const lorem = `Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit, sed do eiusmod tempor incididunt
+    ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud exercitation ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute
+    irure dolor in reprehenderit in voluptate velit esse.`;
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="14. Spread Operator" subtitle="Longhand: Joining arrays"
+const odd = [1, 3, 5];
+const nums = [2, 4, 6].concat(odd);
+console.log(nums); // [ 2, 4, 6, 1, 3, 5 ]
+```
+
+```js title="14. Spread Operator" subtitle="Shorthand: Joining arrays"
+const odd = [1, 3, 5];
+const nums = [2, 4, 6, ...odd];
+console.log(nums); // [ 2, 4, 6, 1, 3, 5 ]
+const nums = [2, ...odd, 4, 6];
+console.log(nums); // [ 2, 1, 3, 5, 4, 6,]
+```
+
+```js title="14. Spread Operator" subtitle="Longhand: Cloning Arrays"
+const arr = [1, 2, 3, 4];
+const arr2 = arr.slice(); // [1, 2, 3, 4]
+```
+
+```js title="14. Spread Operator" subtitle="Shorthand: Cloning Arrays"
+const arr = [1, 2, 3, 4];
+const arr2 = [...arr]; // [1, 2, 3, 4]
+```
+
+```js title="14. Spread Operator" subtitle="Shorthand: Object Destructuring"
+const { a, b, ...z } = { a: 1, b: 2, c: 3, d: 4 };
+console.log(a); // 1
+console.log(b); // 2
+console.log(z); // { c: 3, d: 4 }
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="15. Mandatory Parameter" subtitle="Longhand"
+function foo(bar) {
+  if (bar === undefined) {
+    throw new Error("Missing parameter!");
+  }
+  return bar;
+}
+```
+
+```js title="15. Mandatory Parameter" subtitle="Shorthand"
+mandatory = () => {
+  throw new Error("Missing parameter!");
+};
+
+foo = (bar = mandatory()) => {
+  return bar;
+};
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="16. Array.find" subtitle="Longhand"
+const pets = [
+  { type: "Dog", name: "Max" },
+  { type: "Cat", name: "Karl" },
+  { type: "Dog", name: "Tommy" },
+];
+
+function findDog(name) {
+  for (let i = 0; i < pets.length; ++i) {
+    if (pets[i].type === "Dog" && pets[i].name === name) {
+      return pets[i];
+    }
+  }
+}
+
+cosole.log(findDog(Tommy)); // { type: 'Dog', name: 'Tommy' }
+```
+
+```js 8:12 title="16. Array.find" subtitle="Longhand"
+const pets = [
+  { type: "Dog", name: "Max" },
+  { type: "Cat", name: "Karl" },
+  { type: "Dog", name: "Tommy" },
+];
+
+function findDog(name) {
+  for (let i = 0; i < pets.length; ++i) {
+    if (pets[i].type === "Dog" && pets[i].name === name) {
+      return pets[i];
+    }
+  }
+}
+
+cosole.log(findDog(Tommy)); // { type: 'Dog', name: 'Tommy' }
+```
+
+```js title="16. Array.find" subtitle="Shorthand"
+const pets = [
+  { type: "Dog", name: "Max" },
+  { type: "Cat", name: "Karl" },
+  { type: "Dog", name: "Tommy" },
+];
+
+const findDog = name =>
+  pets.find(pet => pet.type === "Dog" && pet.name === name);
+
+console.log(findDog("Tommy")); // { type: 'Dog', name: 'Tommy' }
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="17. Object[key]-Form Validation" subtitle="Longhand"
+function validate(values) {
+  if (!values.first) return false;
+  if (!values.last) return false;
+  return true;
+}
+
+console.log(validate({ first: "Bruce", last: "Wayne" }));
+// true
+```
+
+```js title="17. Object[key]-Form Validation" subtitle="Shorthand"
+// object validation rules
+const schema = {
+  first: {
+    required: true,
+  },
+  last: {
+    required: true,
+  },
+};
+
+// universal validation function
+const validate = (schema, values) => {
+  for (field in schema) {
+    if (schema[field].required) {
+      if (!values[field]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+console.log(validate(schema, { first: "Bruce" }));
+// false
+console.log(
+  validate(schema, { first: "Bruce", last: "Wayne" })
+); // true
+```
+
+```js 1:9 title="17. Object[key]-Form Validation" subtitle="Shorthand: Schema Creation"
+// object validation rules
+const schema = {
+  first: {
+    required: true,
+  },
+  last: {
+    required: true,
+  },
+};
+
+// universal validation function
+const validate = (schema, values) => {
+  for (field in schema) {
+    if (schema[field].required) {
+      if (!values[field]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+console.log(validate(schema, { first: "Bruce" }));
+// false
+console.log(
+  validate(schema, { first: "Bruce", last: "Wayne" })
+); // true
+```
+
+```js 11:21 title="17. Object[key]-Form Validation" subtitle="Shorthand: Validation Function"
+// object validation rules
+const schema = {
+  first: {
+    required: true,
+  },
+  last: {
+    required: true,
+  },
+};
+
+// universal validation function
+const validate = (schema, values) => {
+  for (field in schema) {
+    if (schema[field].required) {
+      if (!values[field]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+console.log(validate(schema, { first: "Bruce" }));
+// false
+console.log(
+  validate(schema, { first: "Bruce", last: "Wayne" })
+); // true
+```
+
+```js 22:27 title="17. Object[key]-Form Validation" subtitle="Shorthand: Results"
+// object validation rules
+const schema = {
+  first: {
+    required: true,
+  },
+  last: {
+    required: true,
+  },
+};
+
+// universal validation function
+const validate = (schema, values) => {
+  for (field in schema) {
+    if (schema[field].required) {
+      if (!values[field]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+console.log(validate(schema, { first: "Bruce" }));
+// false
+console.log(
+  validate(schema, { first: "Bruce", last: "Wayne" })
+); // true
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="18. Double Bitwise NOT" subtitle="Longhand"
+Math.floor(4.9) === 4; //true
+Math.ceil(4.9) === 5; //true
+```
+
+```js title="18. Double Bitwise NOT" subtitle="Shorthand"
+~~4.9 === 4; //true
+```
+
+```shell title="18. Double Bitwise NOT" subtitle="Explanation"
+Bitwise operators are one of those
+features you learn about in beginner
+JavaScript tutorials and you never
+get to implement them anywhere.
+Besides, who wants to work with
+ones and zeroes if you are not
+dealing with binary?
+```
+
+```text title="18. Double Bitwise NOT" subtitle="Explanation"
+There is, however, a very practical
+use case for the Double Bitwise NOT
+operator. You can use it as a
+replacement for Math.floor().
+The advantage of the Double
+Bitwise NOT operator is that it
+performs the same operation much
+faster. You can read more about
+Bitwise operators
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="19. Exponent Power" subtitle="Longhand"
+Math.pow(2, 3); // 8
+Math.pow(2, 2); // 4
+Math.pow(4, 3); // 64
+```
+
+```js title="19. Exponent Power" subtitle="Shorthand"
+2 ** 3; // 8
+2 ** 4; // 4
+4 ** 3; // 64
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="20. Converting a String into a Number" subtitle="Longhand"
+const num1 = parseInt("100");
+const num2 = parseFloat("100.01");
+```
+
+```js title="20. Converting a String into a Number" subtitle="Shorthand"
+const num1 = +"100";
+// converts to int data type
+
+const num2 = +"100.01";
+// converts to float data type
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="21. Object Property Assignment" subtitle="Longhand"
+var _extends = function(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+    for (var key in source) {
+      if (
+        Object.prototype.hasOwnProperty.call(source, key)
+      ) {
+        target[key] = source[key];
+      }
+    }
+  }
+  return target;
+};
+
+var fname = { firstName: "Black" };
+var lname = { lastName: "Panther" };
+
+var full_name = _extends(
+  {},
+  fname,
+  { middleName: "Magic" },
+  lname
+);
+console.log(full_name);
+// {firstName: "Black", lastName: "Panther"}
+```
+
+```js 1:13 title="21. Object Property Assignment" subtitle="Longhand"
+var _extends = function(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+    for (var key in source) {
+      if (
+        Object.prototype.hasOwnProperty.call(source, key)
+      ) {
+        target[key] = source[key];
+      }
+    }
+  }
+  return target;
+};
+
+var fname = { firstName: "Black" };
+var lname = { lastName: "Panther" };
+
+var full_name = _extends(
+  {},
+  fname,
+  { middleName: "Magic" },
+  lname
+);
+console.log(full_name);
+// {firstName: "Black", lastName: "Panther"}
+```
+
+```js title="21. Object Property Assignment" subtitle="Shorthand using Object.assign()"
+const fname = { firstName: "Black" };
+const lname = { lastName: "Panther" };
+
+let full_name = Object.assign({}, fname, lname);
+console.log(full_name);
+// {firstName: "Black", lastName: "Panther"}
+```
+
+```js title="21. Object Property Assignment" subtitle="Shorthand usign destructuring(spread operators)"
+const fname = { firstName: "Black" };
+const lname = { lastName: "Panther" };
+
+const full_name = {
+  ...fname,
+  middleName: "Magic",
+  ...lname,
+};
+console.log(full_name);
+// {firstName: "Black",middleName: "Magic", lastName: "Panther"}
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="22. Bitwise IndexOf" subtitle="Longhand"
+if (arr.indexOf(item) > -1) {
+  // Confirm item IS found
+}
+
+if (arr.indexOf(item) === -1) {
+  // Confirm item IS NOT found
+}
+```
+
+```js title="22. Bitwise IndexOf" subtitle="Shorthand using Bitwise Operator"
+if (~arr.indexOf(item)) {
+  // Confirm item IS found
+}
+
+if (!~arr.indexOf(item)) {
+  // Confirm item IS NOT found
+}
+```
+
+```js 1[5] title="22. Bitwise IndexOf" subtitle="Bitwise Operator returns falsy value only for '-1'"
+if (~arr.indexOf(item)) {
+  // Confirm item IS found
+}
+
+if (!~arr.indexOf(item)) {
+  // Confirm item IS NOT found
+}
+```
+
+```js title="22. Bitwise IndexOf" subtitle="Shorthand usign includes()"
+if (arr.includes(item)) {
+  // Returns true
+  // if the item exists, false if it doesn't
+}
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="23. Object.entries()" subtitle="Code"
+const credits = {
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+};
+const arr = Object.entries(credits);
+
+console.log(arr);
+/** Output:
+[ [ 'producer', 'John' ],
+  [ 'director', 'Jane' ],
+  [ 'assistant', 'Peter' ]
+]
+**/
+```
+
+```js 6 title="23. Object.entries()" subtitle="Code"
+const credits = {
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+};
+const arr = Object.entries(credits);
+
+console.log(arr);
+/** Output:
+[ [ 'producer', 'John' ],
+  [ 'director', 'Jane' ],
+  [ 'assistant', 'Peter' ]
+]
+**/
+```
+
+```js title="23. Object.entries()" subtitle="Explanation"
+This is a feature that was
+introduced in ES8 that allows
+you to convert a literal object
+into a key/value pair array.
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="24. Object.keys()" subtitle="Code"
+const credits = {
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+};
+const arr = Object.keys(credits);
+
+console.log(arr);
+/** Output:
+["producer", "director", "assistant"]
+**/
+```
+
+```js 6 title="24. Object.keys()" subtitle="Code"
+const credits = {
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+};
+const arr = Object.keys(credits);
+
+console.log(arr);
+/** Output:
+["producer", "director", "assistant"]
+**/
+```
+
+```js title="24. Object.keys()" subtitle="Explanation"
+This is also a new feature introduced
+in ES8 that performs a similar function
+to Object.entries(), but with only the keys part!
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="25. Object.values()" subtitle="Code"
+const credits = {
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+};
+const arr = Object.values(credits);
+
+console.log(arr);
+/** Output:
+["John", "Jane", "Peter"]
+**/
+```
+
+```js 6 title="25. Object.values()" subtitle="Code"
+const credits = {
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+};
+const arr = Object.values(credits);
+
+console.log(arr);
+/** Output:
+["John", "Jane", "Peter"]
+**/
+```
+
+```js title="25. Object.values()" subtitle="Explanation"
+This is also a new feature introduced
+in ES8 that performs a similar function
+to Object.entries(), but with only the values part!
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+
+```js title="26. Object.fromEntries()" subtitle="Code"
+const credits = [
+  ["producer", "John"],
+  ["director", "Jane"],
+  ["assistant", "Peter"],
+];
+const arr = Object.fromEntries(credits);
+
+console.log(arr);
+/** Output:
+{
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+}
+**/
+```
+
+```js 6 title="26. Object.fromEntries()" subtitle="Code"
+const credits = [
+  ["producer", "John"],
+  ["director", "Jane"],
+  ["assistant", "Peter"],
+];
+const arr = Object.fromEntries(credits);
+
+console.log(arr);
+/** Output:
+{
+  producer: "John",
+  director: "Jane",
+  assistant: "Peter",
+}
+**/
+```
+
+```js title="26. Object.fromEntries()" subtitle="Explanation"
+This is a latest feature in JS that allows
+you to convert a key/value pair array
+into an object.
+```
+
+</CodeSurferLayout>
+
+---
+
+The End 🔚
